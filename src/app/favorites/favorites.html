@@ -1,0 +1,28 @@
+<div class="favorites-container">
+  <h2>Your favorites</h2>
+
+  <div *ngIf="!favorites().length" class="empty">You have no favorite recipes yet.</div>
+
+  <div *ngIf="visibleFavorites().length" class="recipe-grid">
+    <div *ngFor="let meal of visibleFavorites()" class="recipe-card">
+      <img [src]="meal.strMealThumb" [alt]="meal.strMeal" />
+      <h3>{{ meal.strMeal }}</h3>
+      <div class="card-actions">
+        <a [routerLink]="['/recipe', meal.idMeal]">See details</a>
+        <button type="button"
+                class="fav-btn"
+                [class.active]="isFavorite(meal.idMeal)"
+                (click)="toggleFavorite(meal)"
+                aria-label="Remove from favorites">
+          ♥
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="visibleFavorites().length" class="pagination">
+    <button (click)="prevPage()" [disabled]="page() === 1">Prev</button>
+    <span>Page {{ page() }} / {{ totalPages() }}</span>
+    <button (click)="nextPage()" [disabled]="page() === totalPages()">Next</button>
+  </div>
+</div>

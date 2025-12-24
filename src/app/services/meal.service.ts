@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin, map } from 'rxjs';
 
 @Injectable()
 export class MealService {
@@ -22,5 +22,12 @@ export class MealService {
 
   getRandomMeal(): Observable<any> {
     return this.http.get(`${this.apiUrl}/random.php`);
+  }
+
+  getRandomMeals(count: number): Observable<any[]> {
+    const calls = Array.from({ length: count }, () => this.getRandomMeal());
+    return forkJoin(calls).pipe(
+      map(responses => responses.flatMap(res => res.meals || []))
+    );
   }
 }

@@ -1,11 +1,15 @@
-.home-container {
+.favorites-container {
   padding: 1.5rem;
   text-align: center;
 }
 
-.error {
-  color: red;
+h2 {
+  margin-bottom: 1rem;
+}
+
+.empty {
   margin-top: 1rem;
+  color: #666;
 }
 
 .recipe-grid {
@@ -23,24 +27,24 @@
   transition: transform 0.2s;
 }
 
-  .recipe-card:hover {
-    transform: scale(1.03);
-  }
+.recipe-card:hover {
+  transform: scale(1.03);
+}
 
-  .recipe-card img {
-    width: 100%;
-    border-radius: 10px;
-  }
+.recipe-card img {
+  width: 100%;
+  border-radius: 10px;
+}
 
-  .recipe-card h3 {
-    margin: 0.5rem 0;
-  }
+.recipe-card h3 {
+  margin: 0.5rem 0;
+}
 
-  .recipe-card a {
-    color: #c25c2c;
-    text-decoration: none;
-    font-weight: bold;
-  }
+.recipe-card a {
+  color: #c25c2c;
+  text-decoration: none;
+  font-weight: bold;
+}
 
 .card-actions {
   display: flex;
@@ -71,22 +75,29 @@
   background: #ffe3d6;
 }
 
-.load-more {
+.pagination {
   display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 1rem;
   margin: 1.5rem 0;
 }
 
-  .load-more button {
-    padding: 0.6rem 1.2rem;
-    border: 1px solid #c25c2c;
-    background: #fff;
-    color: #c25c2c;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
+.pagination button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #c25c2c;
+  background: #fff;
+  color: #c25c2c;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
 
-  .load-more button:hover {
-    background: #ffe3d6;
-  }
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination button:not(:disabled):hover {
+  background: #ffe3d6;
+}

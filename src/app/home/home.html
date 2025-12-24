@@ -1,18 +1,33 @@
 <div class="home-container">
   <app-search-bar (search)="onSearch($event)"></app-search-bar>
 
-  <div *ngIf="loading()">Loading...</div>
+  <div *ngIf="loadingInitial()">Loading...</div>
   <div *ngIf="error()" class="error">{{ error() }}</div>
 
-  <div *ngIf="!loading() && meals()?.length" class="recipe-grid">
-    <div *ngFor="let meal of meals()" class="recipe-card">
+    <div *ngIf="meals()?.length" class="recipe-grid">
+      <div *ngFor="let meal of meals()" class="recipe-card">
       <img [src]="meal.strMealThumb" [alt]="meal.strMeal" />
       <h3>{{ meal.strMeal }}</h3>
-      <a [routerLink]="['/recipe', meal.idMeal]">See details</a>
+      <div class="card-actions">
+        <a [routerLink]="['/recipe', meal.idMeal]">See details</a>
+        <button type="button"
+                class="fav-btn"
+                [class.active]="isFavorite(meal.idMeal)"
+                (click)="toggleFavorite(meal)"
+                aria-label="Toggle favorite">
+          ♥
+        </button>
+      </div>
     </div>
   </div>
 
-  <div *ngIf="!loading() && meals() && meals()?.length === 0">
+    <div *ngIf="!loadingInitial() && meals() && meals()?.length === 0">
     No recipe to show.
   </div>
+
+    <div *ngIf="meals()?.length" class="load-more">
+      <button (click)="loadMoreRandom()" [disabled]="loadingMore()">
+        {{ loadingMore() ? 'Loading...' : 'Load more' }}
+      </button>
+    </div>
 </div>
