@@ -3,6 +3,11 @@
   <img [src]="meal().strMealThumb" [alt]="meal().strMeal" />
 
   <h3>Ingredients</h3>
+  <div class="ing-actions">
+    <button type="button" (click)="addToShoppingList()">Add to shopping list</button>
+    <button type="button" (click)="copyShoppingList()">Copy</button>
+    <button type="button" (click)="downloadShoppingList()">Download</button>
+  </div>
   <ul>
     <li *ngFor="let i of ingredients()">
       {{ i.ingredient }} – {{ i.measure }}

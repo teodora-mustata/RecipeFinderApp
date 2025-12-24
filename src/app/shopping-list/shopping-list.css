@@ -1,0 +1,120 @@
+.shopping-container {
+  max-width: 860px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff7f2;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.reset {
+  border: 1px solid #c25c2c;
+  background: #fff;
+  color: #c25c2c;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.reset:hover {
+  background: #ffe3d6;
+}
+
+.empty {
+  margin-top: 1rem;
+  color: #555;
+}
+
+.entry-card {
+  margin-top: 1rem;
+  background: #fff;
+  border: 1px solid #f0d7cb;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.entry-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.recipe-name {
+  font-weight: 700;
+  color: #c25c2c;
+}
+
+.timestamp {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.delete {
+  border: 1px solid #b02200;
+  background: #fff;
+  color: #b02200;
+  border-radius: 8px;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.delete:hover {
+  background: #ffe3d6;
+}
+
+.entry-card ul,
+.final-card ul {
+  list-style: none;
+  padding: 0.5rem 0 0;
+  margin: 0;
+}
+
+.entry-card li,
+.final-card li {
+  padding: 0.2rem 0;
+}
+
+.final-card {
+  margin-top: 1.5rem;
+  background: #fff0e8;
+  border: 1px solid #f0d7cb;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.final-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.final-actions button {
+  margin-left: 0.5rem;
+  border: 1px solid #c25c2c;
+  background: #fff;
+  color: #c25c2c;
+  border-radius: 8px;
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.final-actions button:hover {
+  background: #ffe3d6;
+}

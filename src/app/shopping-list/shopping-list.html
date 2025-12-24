@@ -1,0 +1,36 @@
+<div class="shopping-container">
+  <div class="header-row">
+    <h2>Shopping list</h2>
+    <button type="button" class="reset" (click)="clearAll()">Reset all</button>
+  </div>
+
+  <div *ngIf="!entries().length" class="empty">No items yet. Add recipes from their detail pages.</div>
+
+  <div *ngFor="let entry of entries(); trackBy: trackByEntry" class="entry-card">
+    <div class="entry-top">
+      <div>
+        <div class="recipe-name">{{ entry.recipe }}</div>
+        <div class="timestamp">Added: {{ entry.addedAt | date:'medium' }}</div>
+      </div>
+      <button type="button" class="delete" (click)="removeEntry(entry.id)">Delete</button>
+    </div>
+    <ul>
+      <li *ngFor="let item of entry.items">{{ item.ingredient }} – {{ item.measure }}</li>
+    </ul>
+  </div>
+
+  <div *ngIf="aggregated().length" class="final-card">
+    <div class="final-header">
+      <h3>Final shopping list</h3>
+      <div class="final-actions">
+        <button type="button" (click)="copyFinalList()">Copy</button>
+        <button type="button" (click)="downloadFinalList()">Download</button>
+      </div>
+    </div>
+    <ul>
+      <li *ngFor="let item of aggregated(); trackBy: trackByItem">
+        {{ item.ingredient }} – {{ item.measure }}
+      </li>
+    </ul>
+  </div>
+</div>
