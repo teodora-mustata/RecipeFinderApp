@@ -57,3 +57,49 @@ a {
   .ing-actions button:hover {
     background: #ffe3d6;
   }
+
+.timer-start {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  background: #fff3e0;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  box-shadow: 0 1px 6px 0 #ffb36622;
+}
+
+.timer-start label {
+  color: #ff6600;
+  font-weight: 500;
+}
+
+.timer-start input {
+  border: 1px solid #ffb366;
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  background: #fff7f0;
+  color: #ff6600;
+}
+
+.timer-start button {
+  background: #ffb366;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.timer-start button:hover {
+  background: #ff6600;
+}
+
+.timer-error {
+  color: #ff3300;
+  font-size: 0.95rem;
+  margin-left: 0.5rem;
+}

@@ -5,6 +5,7 @@ import { MealService } from '../services/meal.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ShoppingListService } from '../services/shopping-list.service';
 import { TimerService } from '../services/timer.service';
+import { StopwatchService } from '../services/stopwatch.service';
 import { FormsModule } from '@angular/forms';
 
   @Component({
@@ -26,8 +27,14 @@ import { FormsModule } from '@angular/forms';
       private route: ActivatedRoute,
       private mealService: MealService,
       private shoppingListService: ShoppingListService,
-      private timerService: TimerService
+      private timerService: TimerService,
+      private stopwatchService: StopwatchService
     ) { }
+    startStopwatch() {
+      const meal = this.meal();
+      const label = meal?.strMeal || 'Cronometru';
+      this.stopwatchService.startStopwatch(label, meal?.idMeal, meal?.strMeal);
+    }
 
     ngOnInit() {
       const id = this.route.snapshot.paramMap.get('id');

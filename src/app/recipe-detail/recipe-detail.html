@@ -10,6 +10,7 @@
     <button type="button" (click)="setPreset('10:00')">10 min</button>
     <button type="button" (click)="setPreset('30:00')">30 min</button>
     <button type="button" (click)="startTimer()">Start timer</button>
+    <button type="button" (click)="startStopwatch()">Start cronometru</button>
     <div *ngIf="timerError" class="timer-error">{{ timerError }}</div>
   </div>
 

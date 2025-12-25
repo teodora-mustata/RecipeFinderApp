@@ -9,6 +9,8 @@ export const routes: Routes = [
   { path: 'recipe/:id', component: RecipeDetailComponent },
   { path: 'shopping-list', component: ShoppingListComponent },
   { path: 'favorites', component: FavoritesComponent },
-  { path: 'timers', component: TimersComponent }
+  { path: 'time-manager', component: TimersComponent }
 ];
+
+
 
