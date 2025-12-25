@@ -1,0 +1,109 @@
+/* Stil pentru butonul See details */
+.see-details-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  background: #c25c2c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.4rem 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 1px 4px rgba(194,92,44,0.08);
+}
+.see-details-btn:hover {
+  background: #a94d22;
+  color: #fffbe9;
+  text-decoration: none;
+}
+.completed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+.completed-card {
+  background: #fff7f2;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.card-main {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.card-main img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.card-info {
+  flex: 1;
+}
+.card-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: #c25c2c;
+}
+.card-info button {
+  margin-top: 0.5rem;
+  background: #fff;
+  border: 1px solid #c25c2c;
+  color: #c25c2c;
+  border-radius: 8px;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+}
+.card-info button:hover {
+  background: #ffe3d6;
+}
+.notes-section {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.notes-list {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  overflow-x: auto;
+  max-width: 400px;
+}
+.note {
+  background: #ffe3d6;
+  color: #c25c2c;
+  border-radius: 8px;
+  padding: 0.4rem 1rem;
+  min-width: 120px;
+  max-width: 200px;
+  white-space: pre-line;
+}
+.note-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.note-input input {
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #c25c2c;
+}
+.note-input button {
+  background: #fff;
+  border: 1px solid #c25c2c;
+  color: #c25c2c;
+  border-radius: 8px;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+}
+.note-input button:hover {
+  background: #ffe3d6;
+}

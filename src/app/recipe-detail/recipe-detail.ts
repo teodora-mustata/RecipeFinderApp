@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShoppingListService } from '../services/shopping-list.service';
 import { TimerService } from '../services/timer.service';
 import { StopwatchService } from '../services/stopwatch.service';
+import { CompletedRecipesService } from '../services/completed-recipes.service';
 import { FormsModule } from '@angular/forms';
 
   @Component({
@@ -28,8 +29,27 @@ import { FormsModule } from '@angular/forms';
       private mealService: MealService,
       private shoppingListService: ShoppingListService,
       private timerService: TimerService,
-      private stopwatchService: StopwatchService
+      private stopwatchService: StopwatchService,
+      private completedRecipesService: CompletedRecipesService
     ) { }
+    markDone() {
+      const meal = this.meal();
+      if (!meal) return;
+      // Obține timpul cronometrat (dacă există stopwatch asociat rețetei)
+      const stopwatchTime = this.stopwatchService.getElapsedMsForRecipe(meal.idMeal);
+      // Oprește stopwatch-ul asociat rețetei (dacă există)
+      this.stopwatchService.stopStopwatchForRecipe(meal.idMeal);
+      const completed = {
+        id: Date.now().toString(),
+        recipeId: meal.idMeal,
+        recipeName: meal.strMeal,
+        image: meal.strMealThumb,
+        completedAt: new Date().toISOString(),
+        stopwatchTime,
+        notes: []
+      };
+      this.completedRecipesService.add(completed);
+    }
     startStopwatch() {
       const meal = this.meal();
       const label = meal?.strMeal || 'Cronometru';

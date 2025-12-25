@@ -19,6 +19,7 @@
     <button type="button" (click)="addToShoppingList()">Add to shopping list</button>
     <button type="button" (click)="copyShoppingList()">Copy</button>
     <button type="button" (click)="downloadShoppingList()">Download</button>
+    <button type="button" class="done-btn" (click)="markDone()">Done</button>
   </div>
   <ul>
     <li *ngFor="let i of ingredients()">

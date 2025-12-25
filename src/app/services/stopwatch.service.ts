@@ -1,3 +1,4 @@
+
 import { Injectable, signal } from '@angular/core';
 
 export interface Stopwatch {
@@ -106,5 +107,19 @@ export class StopwatchService {
   }
   private loadMainStopwatchId(): string | null {
     return localStorage.getItem('mainStopwatchId') || null;
+  }
+
+  getStopwatchForRecipe(recipeId: string) {
+    return this.stopwatches().find(sw => sw.recipeId === recipeId) || null;
+  }
+
+  getElapsedMsForRecipe(recipeId: string): number | undefined {
+    const sw = this.getStopwatchForRecipe(recipeId);
+    return sw ? sw.elapsedMs : undefined;
+  }
+
+  stopStopwatchForRecipe(recipeId: string) {
+    const sw = this.getStopwatchForRecipe(recipeId);
+    if (sw) this.stopStopwatch(sw.id);
   }
 }

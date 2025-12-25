@@ -1,0 +1,39 @@
+<div class="completed-list">
+  <div *ngFor="let r of completed()" class="completed-card">
+    <div class="card-main">
+      <img [src]="r.image" [alt]="r.recipeName" />
+
+      <div class="card-info">
+        <h3>{{ r.recipeName }}</h3>
+        <div>Date: {{ r.completedAt | date:'medium' }}</div>
+
+        <div>
+          Time:
+          {{ r.stopwatchTime
+            ? (r.stopwatchTime / 1000 / 60 | number:'1.0-0') + ' min'
+            : 'No time registered'
+          }}
+        </div>
+
+        <button (click)="remove(r.id)">Delete</button>
+        <a [routerLink]="['/recipe', r.recipeId]" class="see-details-btn">See details</a>
+      </div>
+    </div>
+
+    <div class="notes-section">
+      <div class="notes-list" *ngIf="r.notes.length">
+        <div class="note" *ngFor="let n of r.notes">
+          {{ n }}
+        </div>
+      </div>
+
+      <div class="note-input">
+        <input
+          [(ngModel)]="noteInput[r.id]"
+          placeholder="Add a note..."
+        />
+        <button (click)="addNote(r.id)">Add Note</button>
+      </div>
+    </div>
+  </div>
+</div>
