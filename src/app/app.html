@@ -10,11 +10,13 @@
     <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
     <a routerLink="/favorites" routerLinkActive="active">Favorite</a>
     <a routerLink="/shopping-list" routerLinkActive="active">Shopping list</a>
+    <a routerLink="/timers" routerLinkActive="active">Timers</a>
   </nav>
 </header>
 
 <main>
   <router-outlet></router-outlet>
+  <app-timer-widget></app-timer-widget>
 </main>
 
 <footer>

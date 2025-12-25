@@ -1,0 +1,38 @@
+<div class="timer-widget" *ngIf="mainTimer()">
+  <div class="timer-label">{{ mainTimer()?.label }}</div>
+  <div
+    class="timer-time"
+    [class.finished]="mainTimer()?.state === 'finished'"
+  >
+    {{ getTimeLeft(mainTimer()?.remainingMs ?? 0) }}
+  </div>
+  <div class="timer-controls">
+    <button
+      *ngIf="mainTimer()?.state === 'running'"
+      (click)="pause()"
+    >
+      Pause
+    </button>
+    <button
+      *ngIf="mainTimer()?.state === 'paused'"
+      (click)="resume()"
+    >
+      Resume
+    </button>
+    <button (click)="addMinute()">+1 min</button>
+    <button (click)="subtractMinute()">-1 min</button>
+    <button (click)="close()">❌</button>
+  </div>
+  <div class="timer-switch">
+    <span
+      *ngFor="let t of timers()"
+      [class.active]="t.id === mainTimerId()"
+      (click)="selectTimer(t.id)"
+    >
+      {{ t.label }}
+    </span>
+  </div>
+  <div *ngIf="mainTimer()?.state === 'finished'" class="timer-finished">
+    Timer finished!
+  </div>
+</div>

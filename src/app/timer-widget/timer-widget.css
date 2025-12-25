@@ -1,0 +1,59 @@
+.timer-widget {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  padding: 16px 20px;
+  min-width: 220px;
+  max-width: 320px;
+  font-family: inherit;
+  transition: box-shadow 0.2s;
+}
+.timer-label {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.timer-time {
+  font-size: 2em;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.timer-controls button {
+  margin: 0 4px;
+  padding: 4px 10px;
+  font-size: 1em;
+}
+.timer-switch {
+  margin-top: 8px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.timer-switch span {
+  cursor: pointer;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: #eee;
+  font-size: 0.95em;
+}
+.timer-switch .active {
+  background: #cce5ff;
+  font-weight: bold;
+}
+.timer-finished {
+  color: #d9534f;
+  font-weight: bold;
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 #d9534f44; }
+  70% { box-shadow: 0 0 8px 8px #d9534f22; }
+  100% { box-shadow: 0 0 0 0 #d9534f44; }
+}
+.timer-time.finished {
+  color: #d9534f;
+  animation: pulse 1s infinite;
+}

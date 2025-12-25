@@ -1,0 +1,69 @@
+.timers-page {
+  max-width: 700px;
+  margin: 32px auto;
+  padding: 16px;
+}
+.timers-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.timer-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  padding: 16px 20px;
+  min-width: 200px;
+  max-width: 260px;
+  position: relative;
+  transition: box-shadow 0.2s;
+}
+.timer-card.main {
+  border: 2px solid #007bff;
+}
+.timer-label {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.timer-time {
+  font-size: 1.7em;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.timer-state {
+  font-size: 0.95em;
+  color: #888;
+  margin-bottom: 8px;
+}
+.timer-controls button {
+  margin: 0 4px 4px 0;
+  padding: 4px 10px;
+  font-size: 1em;
+}
+.timer-finished {
+  color: #d9534f;
+  font-weight: bold;
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 #d9534f44; }
+  70% { box-shadow: 0 0 8px 8px #d9534f22; }
+  100% { box-shadow: 0 0 0 0 #d9534f44; }
+}
+.timer-error {
+  color: #d9534f;
+  margin-top: 8px;
+}
+.new-timer {
+  margin-top: 24px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.new-timer input {
+  padding: 4px 8px;
+  font-size: 1em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}

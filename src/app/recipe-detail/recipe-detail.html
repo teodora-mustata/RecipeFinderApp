@@ -2,6 +2,17 @@
   <h2>{{ meal().strMeal }}</h2>
   <img [src]="meal().strMealThumb" [alt]="meal().strMeal" />
 
+  <!-- Timer start UI -->
+  <div class="timer-start">
+    <label for="timerInput">Durată:</label>
+    <input id="timerInput" type="text" [(ngModel)]="timerInput" placeholder="ex: 15:00, 1:20:30" />
+    <button type="button" (click)="setPreset('5:00')">5 min</button>
+    <button type="button" (click)="setPreset('10:00')">10 min</button>
+    <button type="button" (click)="setPreset('30:00')">30 min</button>
+    <button type="button" (click)="startTimer()">Start timer</button>
+    <div *ngIf="timerError" class="timer-error">{{ timerError }}</div>
+  </div>
+
   <h3>Ingredients</h3>
   <div class="ing-actions">
     <button type="button" (click)="addToShoppingList()">Add to shopping list</button>

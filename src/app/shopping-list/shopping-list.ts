@@ -1,4 +1,5 @@
 import { Component, OnInit, Signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ShoppingListService, AggregatedItem } from '../services/shopping-list.service';
 import { ShoppingEntry } from '../services/shopping-list.service';
@@ -6,7 +7,7 @@ import { ShoppingEntry } from '../services/shopping-list.service';
 @Component({
   selector: 'app-shopping-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './shopping-list.html',
   styleUrls: ['./shopping-list.css']
 })

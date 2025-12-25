@@ -1,0 +1,31 @@
+<div class="timers-page">
+  <h2>Active Timers</h2>
+  <div *ngIf="!timers().length">Niciun timer activ.</div>
+  <div class="timers-list">
+    <div *ngFor="let t of timers()" class="timer-card" [class.main]="t.id === mainTimerId()">
+      <div class="timer-label">{{ t.label }}</div>
+      <div class="timer-time" [class.finished]="t.state === 'finished'">{{ getTimeLeft(t.remainingMs) }}</div>
+      <div class="timer-state">{{ t.state }}</div>
+      <div class="timer-controls">
+        <button *ngIf="t.state === 'running'" (click)="pause(t.id)">Pause</button>
+        <button *ngIf="t.state === 'paused'" (click)="resume(t.id)">Resume</button>
+        <button (click)="addMinute(t.id)">+1 min</button>
+        <button (click)="subtractMinute(t.id)">-1 min</button>
+        <button (click)="stop(t.id)">❌</button>
+        <button *ngIf="t.id !== mainTimerId()" (click)="setMain(t.id)">Set as main</button>
+      </div>
+      <div *ngIf="t.state === 'finished'" class="timer-finished">Timer finished!</div>
+    </div>
+  </div>
+
+  <h3>Pornește timer generic</h3>
+  <div class="new-timer">
+    <input type="text" [(ngModel)]="newLabel" placeholder="Etichetă (ex: Cuptor, Ceai)" />
+    <input type="text" [(ngModel)]="newDuration" placeholder="Durată (ex: 10:00, 1:20:30)" />
+    <button (click)="setPreset('5:00')">5 min</button>
+    <button (click)="setPreset('10:00')">10 min</button>
+    <button (click)="setPreset('30:00')">30 min</button>
+    <button (click)="startGenericTimer()">Start timer</button>
+    <div *ngIf="error" class="timer-error">{{ error }}</div>
+  </div>
+</div>
