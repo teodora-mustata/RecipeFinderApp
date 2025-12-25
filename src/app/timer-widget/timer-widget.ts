@@ -18,6 +18,11 @@ export class TimerWidgetComponent implements OnInit {
   mainStopwatchId!: Signal<string | null>;
   mainStopwatch!: Signal<Stopwatch | undefined>;
 
+  widgetPosition = { x: 0, y: 0 };
+  dragging = false;
+  dragOffset = { x: 0, y: 0 };
+  initialized = false;
+
   constructor(private timerService: TimerService, private stopwatchService: StopwatchService) {}
 
   ngOnInit() {
@@ -32,6 +37,15 @@ export class TimerWidgetComponent implements OnInit {
     this.mainStopwatch = computed(() =>
       this.stopwatches().find(sw => sw.id === this.mainStopwatchId())
     );
+  }
+
+  ngAfterViewInit() {
+    if (!this.initialized) {
+      this.widgetPosition.x = window.innerWidth - 380;
+      this.widgetPosition.y = window.innerHeight - 240;
+      this.updateWidgetPosition();
+      this.initialized = true;
+    }
   }
 
   getTimeLeft(ms: number) {
@@ -75,5 +89,39 @@ export class TimerWidgetComponent implements OnInit {
   selectStopwatch(id: string) {
     this.stopwatchService.setMainStopwatch(id);
     this.timerService.setMainTimer(null);
+  }
+
+  startDrag(event: MouseEvent) {
+    this.dragging = true;
+    this.dragOffset = {
+      x: event.clientX - this.widgetPosition.x,
+      y: event.clientY - this.widgetPosition.y
+    };
+    document.addEventListener('mousemove', this.onDrag);
+    document.addEventListener('mouseup', this.stopDrag);
+  }
+
+  onDrag = (event: MouseEvent) => {
+    if (!this.dragging) return;
+    this.widgetPosition.x = event.clientX - this.dragOffset.x;
+    this.widgetPosition.y = event.clientY - this.dragOffset.y;
+    this.updateWidgetPosition();
+  };
+
+  stopDrag = () => {
+    this.dragging = false;
+    document.removeEventListener('mousemove', this.onDrag);
+    document.removeEventListener('mouseup', this.stopDrag);
+  };
+
+  updateWidgetPosition() {
+    const widget = document.querySelector('.movable-widget') as HTMLElement;
+    if (widget) {
+      widget.style.left = this.widgetPosition.x + 'px';
+      widget.style.top = this.widgetPosition.y + 'px';
+      widget.style.position = 'fixed';
+      widget.style.zIndex = '9999';
+      widget.style.cursor = this.dragging ? 'grabbing' : 'grab';
+    }
   }
 }

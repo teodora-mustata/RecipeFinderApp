@@ -1,4 +1,4 @@
-<div class="timer-widget" *ngIf="mainTimer() || mainStopwatch()">
+<div class="timer-widget movable-widget" *ngIf="mainTimer() || mainStopwatch()" (mousedown)="startDrag($event)">
   <div class="timer-label">
     {{ mainTimer()?.label || mainStopwatch()?.label }}
   </div>

@@ -29,8 +29,8 @@
 .timer-switch {
   margin-top: 8px;
   display: flex;
-  gap: 6px;
   flex-wrap: wrap;
+  gap: 0.3rem;
 }
 .timer-switch span {
   cursor: pointer;
@@ -56,4 +56,28 @@
 .timer-time.finished {
   color: #d9534f;
   animation: pulse 1s infinite;
+}
+.movable-widget {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  min-width: 260px;
+  max-width: 340px;
+  min-height: 160px;
+  max-height: 220px;
+  overflow-y: auto;
+  background: #fff7f0;
+  border: 2px solid #ffb366;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px 0 #ffb36633;
+  z-index: 9999;
+  cursor: grab;
+  transition: box-shadow 0.2s, min-height 0.2s, max-height 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.movable-widget:active {
+  cursor: grabbing;
+  box-shadow: 0 4px 24px 0 #ff660033;
 }
