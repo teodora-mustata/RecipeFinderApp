@@ -49,4 +49,4 @@ This application uses the **TheMealDB API** as its recipe data source.
 ---
 
 ### 📻 Video Demo
-Watch the demo of the app here: 
+Watch the demo of the app here: https://youtu.be/zi-JRCdReoY
