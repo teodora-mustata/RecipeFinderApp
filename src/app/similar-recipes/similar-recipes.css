@@ -3,7 +3,6 @@
     text-align: center;
 }
 
-/* Header ca să rămână titlu + buton */
 .header {
     display: flex;
     align-items: center;
@@ -37,7 +36,6 @@
     margin-top: 1rem;
 }
 
-/* chips rămân ca info extra */
 .chips {
     display: flex;
     justify-content: center;
@@ -55,7 +53,6 @@
     font-size: 0.95rem;
 }
 
-/* exact ca pe Home */
 .recipe-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -90,7 +87,6 @@
     font-weight: bold;
 }
 
-/* zona cu link + favorite, identic ca Home */
 .card-actions {
     display: flex;
     align-items: center;
@@ -99,7 +95,6 @@
     margin-top: 0.5rem;
 }
 
-/* buton favorite identic ca Home + pressed */
 .fav-btn {
     border: 1px solid #c25c2c;
     background: #fff7f2;
@@ -126,14 +121,12 @@
     filter: brightness(0.97);
 }
 
-/* mică informație (match score) */
 .meta {
     color: #666;
     font-size: 0.9rem;
     margin-bottom: 0.3rem;
 }
 
-/* ingredientele matched */
 .matches {
     display: flex;
     flex-wrap: wrap;

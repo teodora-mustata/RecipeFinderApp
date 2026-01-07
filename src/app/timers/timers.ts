@@ -76,11 +76,11 @@ export class TimersComponent implements OnInit {
     this.error = '';
     const ms = this.parseDuration(this.newDuration);
     if (!this.newLabel.trim()) {
-      this.error = 'Eticheta este obligatorie!';
+      this.error = 'The label is mandatory!';
       return;
     }
     if (ms <= 0) {
-      this.error = 'Durata invalidă!';
+      this.error = 'Invalid duration!';
       return;
     }
     this.timerService.startTimer(this.newLabel.trim(), ms);
@@ -96,7 +96,7 @@ export class TimersComponent implements OnInit {
   startGenericStopwatch() {
     this.errorSW = '';
     if (!this.newSWLabel.trim()) {
-      this.errorSW = 'Eticheta este obligatorie!';
+      this.errorSW = 'The label is mandatory!';
       return;
     }
     this.stopwatchService.startStopwatch(this.newSWLabel.trim());

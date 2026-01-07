@@ -3,8 +3,8 @@
   <div class="split-sections">
     <!-- Timers Section -->
     <div class="timers-section">
-      <h3>Timere active</h3>
-      <div *ngIf="!timers().length">Niciun timer activ.</div>
+      <h3>Active Timers</h3>
+      <div *ngIf="!timers().length">No timer active.</div>
       <div class="timers-list">
         <div *ngFor="let t of timers()" class="timer-card" [class.main]="t.id === mainTimerId()">
           <div class="timer-label">{{ t.label }}</div>
@@ -21,22 +21,24 @@
           <div *ngIf="t.state === 'finished'" class="timer-finished">Timer finished!</div>
         </div>
       </div>
-      <h4>Pornește timer generic</h4>
+      <h4>Start generic timer</h4>
       <div class="new-timer">
-        <input type="text" [(ngModel)]="newLabel" placeholder="Etichetă (ex: Cuptor, Ceai)" />
-        <input type="text" [(ngModel)]="newDuration" placeholder="Durată (ex: 10:00, 1:20:30)" />
-        <button (click)="setPreset('5:00')">5 min</button>
-        <button (click)="setPreset('10:00')">10 min</button>
-        <button (click)="setPreset('30:00')">30 min</button>
-        <button (click)="startGenericTimer()">Start timer</button>
+        <input type="text" [(ngModel)]="newLabel" placeholder="Label (e.g., Oven, Tea)" />
+        <input class="duration-input" type="text" [(ngModel)]="newDuration" placeholder="Duration (e.g., 10:00, 1:20:30)" />
+        <div class="timer-btn-group">
+          <button class="timer-preset-btn" (click)="setPreset('5:00')">5 min</button>
+          <button class="timer-preset-btn" (click)="setPreset('10:00')">10 min</button>
+          <button class="timer-preset-btn" (click)="setPreset('30:00')">30 min</button>
+        </div>
+        <button class="timer-start-btn" (click)="startGenericTimer()">Start timer</button>
         <div *ngIf="error" class="timer-error">{{ error }}</div>
       </div>
     </div>
 
     <!-- Stopwatches Section -->
     <div class="stopwatches-section">
-      <h3>Cronometre active</h3>
-      <div *ngIf="!stopwatches().length">Niciun cronometru activ.</div>
+      <h3>Active Stopwatches</h3>
+      <div *ngIf="!stopwatches().length">No active stopwatch.</div>
       <div class="stopwatches-list">
         <div *ngFor="let sw of stopwatches()" class="stopwatch-card" [class.main]="sw.id === mainStopwatchId()">
           <div class="stopwatch-label">{{ sw.label }}</div>
@@ -49,10 +51,10 @@
           </div>
         </div>
       </div>
-      <h4>Pornește cronometru generic</h4>
+      <h4>Start generic stopwatch</h4>
       <div class="new-stopwatch">
-        <input type="text" [(ngModel)]="newSWLabel" placeholder="Etichetă (ex: Rețetă, Pauză)" />
-        <button (click)="startGenericStopwatch()">Start cronometru</button>
+        <input type="text" [(ngModel)]="newSWLabel" placeholder="Label (e.g., Recipe, Break)" />
+        <button class="timer-start-btn" (click)="startGenericStopwatch()">Start stopwatch</button>
         <div *ngIf="errorSW" class="stopwatch-error">{{ errorSW }}</div>
       </div>
     </div>

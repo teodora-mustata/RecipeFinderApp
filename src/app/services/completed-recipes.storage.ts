@@ -1,11 +1,11 @@
 export interface CompletedRecipe {
-  id: string; // unique id for this completion (can be timestamp)
-  recipeId: string; // id of the recipe
+  id: string; 
+  recipeId: string; 
   recipeName: string;
   image: string;
-  completedAt: string; // ISO date string
-  stopwatchTime?: number; // in ms, optional
-  notes: string[]; // array of notes
+  completedAt: string; 
+  stopwatchTime?: number; 
+  notes: string[];
 }
 
 export class CompletedRecipesStorage {

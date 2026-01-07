@@ -35,9 +35,7 @@ import { FormsModule } from '@angular/forms';
     markDone() {
       const meal = this.meal();
       if (!meal) return;
-      // Obține timpul cronometrat (dacă există stopwatch asociat rețetei)
       const stopwatchTime = this.stopwatchService.getElapsedMsForRecipe(meal.idMeal);
-      // Oprește stopwatch-ul asociat rețetei (dacă există)
       this.stopwatchService.stopStopwatchForRecipe(meal.idMeal);
       const completed = {
         id: Date.now().toString(),
@@ -138,7 +136,7 @@ import { FormsModule } from '@angular/forms';
       this.timerError = '';
       const durationMs = this.parseDuration(this.timerInput);
       if (durationMs <= 0) {
-        this.timerError = 'Durata invalidă!';
+        this.timerError = 'Invalid duration!';
         return;
       }
       const meal = this.meal();
@@ -148,24 +146,20 @@ import { FormsModule } from '@angular/forms';
     }
 
     parseDuration(input: string): number {
-      // Accepts ss, mm, mm:ss, hh:mm:ss
       if (!input) return 0;
       const parts = input.split(':').map(p => p.trim()).filter(Boolean);
       let sec = 0;
       if (parts.length === 1) {
-        // Only seconds or minutes
         sec = Number(parts[0]);
-        if (sec > 60) return sec * 1000; // treat as seconds if < 60, else minutes
+        if (sec > 60) return sec * 1000; 
         return sec * 60 * 1000;
       }
       if (parts.length === 2) {
-        // mm:ss
         const min = Number(parts[0]);
         const s = Number(parts[1]);
         return (min * 60 + s) * 1000;
       }
       if (parts.length === 3) {
-        // hh:mm:ss
         const h = Number(parts[0]);
         const min = Number(parts[1]);
         const s = Number(parts[2]);

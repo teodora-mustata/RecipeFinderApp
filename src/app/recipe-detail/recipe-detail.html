@@ -2,15 +2,16 @@
   <h2>{{ meal().strMeal }}</h2>
   <img [src]="meal().strMealThumb" [alt]="meal().strMeal" />
 
-  <!-- Timer start UI -->
   <div class="timer-start">
-    <label for="timerInput">Durată:</label>
-    <input id="timerInput" type="text" [(ngModel)]="timerInput" placeholder="ex: 15:00, 1:20:30" />
-    <button type="button" (click)="setPreset('5:00')">5 min</button>
-    <button type="button" (click)="setPreset('10:00')">10 min</button>
-    <button type="button" (click)="setPreset('30:00')">30 min</button>
-    <button type="button" (click)="startTimer()">Start timer</button>
-    <button type="button" (click)="startStopwatch()">Start cronometru</button>
+    <label for="timerInput">Duration:</label>
+    <input id="timerInput" class="duration-input" type="text" [(ngModel)]="timerInput" placeholder="ex: 15:00, 1:20:30" />
+    <div class="timer-btn-group">
+      <button type="button" class="timer-preset-btn" (click)="setPreset('5:00')">5 min</button>
+      <button type="button" class="timer-preset-btn" (click)="setPreset('10:00')">10 min</button>
+      <button type="button" class="timer-preset-btn" (click)="setPreset('30:00')">30 min</button>
+    </div>
+    <button type="button" class="timer-start-btn" (click)="startTimer()">Start timer</button>
+    <button type="button" class="timer-start-btn" (click)="startStopwatch()">Start stopwatch</button>
     <div *ngIf="timerError" class="timer-error">{{ timerError }}</div>
   </div>
 

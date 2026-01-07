@@ -8,7 +8,7 @@ export interface ShoppingItem {
 export interface ShoppingEntry {
   id: string;
   recipe: string;
-  addedAt: string; // ISO string
+  addedAt: string; 
   items: ShoppingItem[];
 }
 
@@ -139,7 +139,6 @@ export class ShoppingListService {
     const value = (measure || '').trim();
     if (!value) return { qty: null, unit: '' };
 
-    // Match numbers, decimals, fractions, optional unit text after a space
     const match = value.match(/^([\d.,\/]+)\s*(.*)$/);
     if (!match) return { qty: null, unit: value };
 
@@ -153,7 +152,6 @@ export class ShoppingListService {
   private toNumber(input: string): number | null {
     const str = input.replace(',', '.').trim();
     if (!str) return null;
-    // handle simple fractions like 1/2
     if (str.includes('/')) {
       const [a, b] = str.split('/').map(n => Number(n));
       if (!isNaN(a) && !isNaN(b) && b !== 0) return a / b;

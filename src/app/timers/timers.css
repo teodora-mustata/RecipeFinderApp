@@ -162,16 +162,69 @@
   color: #d9534f;
   margin-top: 8px;
 }
+
 .new-timer {
   margin-top: 24px;
   display: flex;
-  gap: 8px;
   flex-wrap: wrap;
   align-items: center;
+  gap: 10px;
 }
 .new-timer input {
-  padding: 4px 8px;
+  padding: 4px 10px;
   font-size: 1em;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid #ffb366;
+  background: #fff7f0;
+  color: #ff6600;
+}
+.new-timer input.duration-input {
+  min-width: 210px;
+}
+
+/* Grupare și stilizare butoane preset timer */
+.timer-btn-group {
+  display: flex;
+  gap: 8px;
+  margin-right: 8px;
+}
+.timer-preset-btn {
+  background: #fff;
+  color: #ff6600;
+  border: 1.5px solid #ffb366;
+  border-radius: 6px;
+  padding: 0.3rem 0.9rem;
+  font-weight: 500;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border 0.18s;
+  box-shadow: 0 1px 4px 0 #ffb36622;
+}
+.timer-preset-btn:hover, .timer-preset-btn:focus {
+  background: #ffb366;
+  color: #fff;
+  border-color: #ff6600;
+}
+.timer-start-btn {
+  background: linear-gradient(135deg, #ff7b39, #ff5500);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.35rem 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 6px 18px #ff6a0055;
+}
+.timer-start-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px #ff6a0077;
+}
+.timer-start-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px #ff6a0044;
+}
+.new-timer button {
+  margin-left: 4px;
 }

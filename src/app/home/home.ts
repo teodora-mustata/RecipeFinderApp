@@ -80,7 +80,7 @@ export class HomeComponent implements OnInit {
 
   private computeInitialBatch(): number {
     if (typeof window === 'undefined') return 16;
-    const cardWidth = 220; // approximate card width incl. gap
+    const cardWidth = 220; 
     const cols = Math.max(2, Math.floor(window.innerWidth / cardWidth));
     const rows = 2;
     const estimate = cols * rows;

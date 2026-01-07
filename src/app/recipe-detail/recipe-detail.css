@@ -16,6 +16,9 @@
 h2 {
   margin-bottom: 0.5rem;
 }
+.timer-start input.duration-input {
+  min-width: 220px;
+}
 
 h3 {
   margin-top: 1.5rem;
@@ -34,6 +37,25 @@ li {
 a {
   color: #c25c2c;
   text-decoration: none;
+.timer-start-btn {
+  background: linear-gradient(135deg, #ff7b39, #ff5500);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.4rem 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  box-shadow: 0 6px 18px #ff6a0055;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.timer-start-btn:hover {
+  background: linear-gradient(135deg, #ff8c4d, #ff6420);
+  box-shadow: 0 10px 22px #ff6a0077;
+  transform: translateY(-1px);
+}
+.timer-start-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px #ff6a0044;
+}
   font-weight: bold;
 }
 
@@ -67,13 +89,37 @@ a {
 .timer-start {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
   align-items: center;
+  gap: 12px;
   margin-bottom: 1.2rem;
   background: #fff3e0;
   border-radius: 10px;
   padding: 0.7rem 1rem;
   box-shadow: 0 1px 6px 0 #ffb36622;
+}
+
+/* Grupare și stilizare butoane preset timer */
+.timer-btn-group {
+  display: flex;
+  gap: 8px;
+  margin-right: 8px;
+}
+.timer-preset-btn {
+  background: #fff;
+  color: #ff6600;
+  border: 1.5px solid #ffb366;
+  border-radius: 6px;
+  padding: 0.3rem 0.9rem;
+  font-weight: 500;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border 0.18s;
+  box-shadow: 0 1px 4px 0 #ffb36622;
+}
+.timer-preset-btn:hover, .timer-preset-btn:focus {
+  background: #ffb366;
+  color: #fff;
+  border-color: #ff6600;
 }
 
 .timer-start label {
@@ -88,8 +134,11 @@ a {
   background: #fff7f0;
   color: #ff6600;
 }
+.timer-start input.duration-input {
+  min-width: 220px;
+}
 
-.timer-start button {
+.timer-start button:not(.timer-start-btn) {
   background: #ffb366;
   color: #fff;
   border: none;
@@ -98,6 +147,34 @@ a {
   font-weight: 500;
   cursor: pointer;
   transition: background 0.2s;
+}
+.timer-start button:not(.timer-start-btn):hover {
+  background: #ff6600;
+}
+.timer-start button:not(.timer-start-btn):active {
+  transform: translateY(1px) scale(0.98);
+  filter: brightness(0.97);
+}
+
+.timer-start-btn {
+  background: linear-gradient(135deg, #ff7b39, #ff5500);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.4rem 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  box-shadow: 0 6px 18px #ff6a0055;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.timer-start-btn:hover {
+  background: linear-gradient(135deg, #ff8c4d, #ff6420);
+  box-shadow: 0 10px 22px #ff6a0077;
+  transform: translateY(-1px);
+}
+.timer-start-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px #ff6a0044;
 }
 
 .timer-start button:hover {

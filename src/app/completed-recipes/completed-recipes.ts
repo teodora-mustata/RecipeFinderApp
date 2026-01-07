@@ -13,10 +13,8 @@ import { RouterModule } from '@angular/router';
 })
 export class CompletedRecipesComponent {
 
-  // inject exact ca la FavoritesComponent
   private readonly completedRecipesService = inject(CompletedRecipesService);
 
-  // state
   completed = signal(this.completedRecipesService.getAll());
   noteInput: Record<string, string> = {};
 

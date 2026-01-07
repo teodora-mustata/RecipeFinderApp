@@ -24,9 +24,6 @@ export class TimerService {
     this.startInterval();
   }
 
-  /* =======================
-     CRUD TIMERE
-     ======================= */
 
   startTimer(
     label: string,
@@ -142,9 +139,6 @@ export class TimerService {
     return this.timers().find(t => t.id === id);
   }
 
-  /* =======================
-     INTERVAL (TICK)
-     ======================= */
 
   private startInterval() {
     if (this.intervalId) {
@@ -187,9 +181,6 @@ export class TimerService {
     }, 1000);
   }
 
-  /* =======================
-     STORAGE
-     ======================= */
 
   private saveTimers() {
     localStorage.setItem('timers', JSON.stringify(this.timers()));
@@ -218,9 +209,6 @@ export class TimerService {
     }
   }
 
-  /* =======================
-     SOUND
-     ======================= */
 
   private playSound() {
     try {
@@ -229,7 +217,7 @@ export class TimerService {
         'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=';
       audio.play();
     } catch {
-      // ignorăm erori audio
+      // ignoram erori audio
     }
   }
 }
