@@ -1,59 +1,52 @@
-# Recipefinder
+### 🍽️ RecipeFinderApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.4.
+RecipeFinderApp is an Angular-based web application designed to help users quickly search for recipes, explore ingredients, and discover new meal ideas. Built with Angular CLI 20.3.4, the project follows a clean structure and modern frontend practices.
 
-## Development server
+This application uses the **TheMealDB API** as its recipe data source.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+### 🚀 Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- 🔍 **Recipe Search**
+  - Search for recipes by keyword
+  - Displays matching recipes in a clean, responsive layout
+  - Fast filtering and dynamic updates
 
-## Code scaffolding
+- 📄 **Recipe Details**
+  - View detailed information about a selected recipe
+  - Includes ingredients, preparation steps, and additional metadata provided by TheMealDB
+ 
+- 🍲 **Recipe Recommandations**
+  - Based on completed recipes, find other similar ones that you might like
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- ⭐ **Favorites**
+  - Save recipes to a favorites list
+  - Persistent storage
+ 
+- 🛒 **Shopping Cart**
+  - Easily add ingredients of recipes to a shopping list
+ 
+- ⏱️ **Timer**
+  - Set a timer while cooking to help with organizing
+ 
+- 📝 **Notes**
+  - Add your personal notes and reminders for recipes
 
-```bash
-ng generate component component-name
-```
+- ⚙️ **Modular Architecture**
+  - Organized Angular structure
+  - Easy to extend with new features such as categories, filters, or user accounts
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+### 🛠️ Tech Stack
 
-## Building
+- Angular 20.3.4
+- HTML
+- CSS
+- TheMealDB API for recipe data
 
-To build the project run:
+---
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### 📻 Video Demo
+Watch the demo of the app here: 
