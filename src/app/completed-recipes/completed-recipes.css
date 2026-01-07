@@ -138,3 +138,59 @@
   transform: translateY(1px) scale(0.98);
   filter: brightness(0.97);
 }
+
+@media (max-width: 768px) {
+  .completed-list {
+    max-width: 92%;
+    margin: 1.2rem auto;
+    gap: 1.25rem;
+  }
+
+  .completed-card {
+    padding: 1rem;
+  }
+
+  .card-main {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.9rem;
+  }
+
+  .card-main img {
+    width: 100%;
+    height: 180px;
+  }
+
+  .card-info button,
+  .see-details-btn {
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .notes-section {
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .notes-list {
+    max-width: 100%;
+  }
+
+  .note-input input,
+  .note-input button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-main img {
+    height: 160px;
+  }
+
+  .note {
+    min-width: 100px;
+    max-width: 160px;
+    padding: 0.35rem 0.8rem;
+  }
+}

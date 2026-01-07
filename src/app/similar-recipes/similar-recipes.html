@@ -1,10 +1,10 @@
 <div class="similar-container">
     <div class="header">
-        <h2>Rețete similare</h2>
+        <h2>Similar recipes</h2>
         <button type="button" (click)="shuffleSuggestions()">Refresh</button>
     </div>
 
-    <div *ngIf="loading()">Se generează recomandările...</div>
+    <div *ngIf="loading()">Generating recommendations...</div>
     <div *ngIf="error()" class="error">{{ error() }}</div>
 
     <div *ngIf="topIngredients().length" class="chips">
@@ -18,7 +18,7 @@
             <img [src]="meal.strMealThumb" [alt]="meal.strMeal" />
             <h3>{{ meal.strMeal }}</h3>
 
-            <div class="meta">Match: {{ meal.score }} ingrediente</div>
+            <div class="meta">Match: {{ meal.score }} ingredients</div>
 
             <div class="matches">
                 <span class="match" *ngFor="let ing of meal.matchedIngredients">
