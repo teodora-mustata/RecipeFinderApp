@@ -1,0 +1,150 @@
+.similar-container {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* Header ca să rămână titlu + buton */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+.header button {
+    padding: 0.6rem 1.2rem;
+    border: 1px solid #c25c2c;
+    background: #fff;
+    color: #c25c2c;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.08s ease, filter 0.08s ease;
+}
+
+.header button:hover {
+    background: #ffe3d6;
+}
+
+.header button:active {
+    transform: translateY(1px) scale(0.98);
+    filter: brightness(0.97);
+}
+
+.error {
+    color: red;
+    margin-top: 1rem;
+}
+
+/* chips rămân ca info extra */
+.chips {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.chip {
+    background: #fff3e0;
+    border: 1px solid #ffb366;
+    color: #c25c2c;
+    border-radius: 999px;
+    padding: 0.25rem 0.8rem;
+    font-size: 0.95rem;
+}
+
+/* exact ca pe Home */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.recipe-card {
+    background: #fff7f2;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.recipe-card:hover {
+    transform: scale(1.03);
+}
+
+.recipe-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.recipe-card h3 {
+    margin: 0.5rem 0;
+}
+
+.recipe-card a {
+    color: #c25c2c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* zona cu link + favorite, identic ca Home */
+.card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+/* buton favorite identic ca Home + pressed */
+.fav-btn {
+    border: 1px solid #c25c2c;
+    background: #fff7f2;
+    color: #c25c2c;
+    border-radius: 999px;
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.08s ease, filter 0.08s ease;
+}
+
+.fav-btn.active {
+    background: #ffb3a0;
+    color: #b02200;
+}
+
+.fav-btn:hover {
+    background: #ffe3d6;
+}
+
+.fav-btn:active {
+    transform: scale(0.92);
+    filter: brightness(0.97);
+}
+
+/* mică informație (match score) */
+.meta {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+/* ingredientele matched */
+.matches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.4rem;
+}
+
+.match {
+    background: #ffe3d6;
+    color: #c25c2c;
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.85rem;
+}

@@ -30,4 +30,9 @@ export class MealService {
       map(responses => responses.flatMap(res => res.meals || []))
     );
   }
+  
+  filterMealsByIngredient(ingredient: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/filter.php?i=${encodeURIComponent(ingredient)}`);
+  }
+
 }

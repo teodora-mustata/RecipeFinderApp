@@ -1,0 +1,39 @@
+<div class="similar-container">
+    <div class="header">
+        <h2>Rețete similare</h2>
+        <button type="button" (click)="shuffleSuggestions()">Refresh</button>
+    </div>
+
+    <div *ngIf="loading()">Se generează recomandările...</div>
+    <div *ngIf="error()" class="error">{{ error() }}</div>
+
+    <div *ngIf="topIngredients().length" class="chips">
+        <span class="chip" *ngFor="let ing of topIngredients()">
+            {{ ing }}
+        </span>
+    </div>
+
+    <div *ngIf="suggestions().length" class="recipe-grid">
+        <div *ngFor="let meal of suggestions()" class="recipe-card">
+            <img [src]="meal.strMealThumb" [alt]="meal.strMeal" />
+            <h3>{{ meal.strMeal }}</h3>
+
+            <div class="meta">Match: {{ meal.score }} ingrediente</div>
+
+            <div class="matches">
+                <span class="match" *ngFor="let ing of meal.matchedIngredients">
+                    {{ ing }}
+                </span>
+            </div>
+
+            <div class="card-actions">
+                <a [routerLink]="['/recipe', meal.idMeal]">See details</a>
+
+                <button type="button" class="fav-btn" [class.active]="isFavorite(meal.idMeal)"
+                    (click)="toggleFavorite(meal)" aria-label="Toggle favorite">
+                    ♥
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

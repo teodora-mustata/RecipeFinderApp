@@ -4,7 +4,7 @@
   padding: 1.5rem;
   background: #fff7f2;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .header-row {
@@ -29,6 +29,12 @@
   background: #ffe3d6;
 }
 
+.reset:active {
+  transform: translateY(1px) scale(0.98);
+  filter: brightness(0.97);
+}
+
+
 .empty {
   margin-top: 1rem;
   color: #555;
@@ -40,7 +46,7 @@
   border: 1px solid #f0d7cb;
   border-radius: 10px;
   padding: 1rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 .entry-top {
@@ -75,6 +81,12 @@
   background: #ffe3d6;
 }
 
+.delete:active {
+  transform: translateY(1px) scale(0.98);
+  filter: brightness(0.97);
+}
+
+
 .entry-card ul,
 .final-card ul {
   list-style: none;
@@ -93,7 +105,7 @@
   border: 1px solid #f0d7cb;
   border-radius: 10px;
   padding: 1rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 .final-header {
@@ -117,4 +129,9 @@
 
 .final-actions button:hover {
   background: #ffe3d6;
+}
+
+.final-actions button:active {
+  transform: translateY(1px) scale(0.98);
+  filter: brightness(0.97);
 }

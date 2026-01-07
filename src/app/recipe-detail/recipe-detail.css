@@ -4,14 +4,14 @@
   background: #fff7f2;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-  .detail-container img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-  }
+.detail-container img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
 
 h2 {
   margin-bottom: 0.5rem;
@@ -44,19 +44,25 @@ a {
   flex-wrap: wrap;
 }
 
-  .ing-actions button {
-    padding: 0.45rem 0.9rem;
-    border: 1px solid #c25c2c;
-    background: #fff;
-    color: #c25c2c;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
+.ing-actions button {
+  padding: 0.45rem 0.9rem;
+  border: 1px solid #c25c2c;
+  background: #fff;
+  color: #c25c2c;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
 
-  .ing-actions button:hover {
-    background: #ffe3d6;
-  }
+.ing-actions button:hover {
+  background: #ffe3d6;
+}
+
+.ing-actions button:active {
+  transform: translateY(1px) scale(0.98);
+  filter: brightness(0.97);
+}
+
 
 .timer-start {
   display: flex;
@@ -97,6 +103,12 @@ a {
 .timer-start button:hover {
   background: #ff6600;
 }
+
+.timer-start button:active {
+  transform: translateY(1px) scale(0.98);
+  filter: brightness(0.97);
+}
+
 
 .timer-error {
   color: #ff3300;
